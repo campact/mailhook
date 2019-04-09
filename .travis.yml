@@ -7,7 +7,7 @@ env:
     - GOOS=linux
     - GOARCH=amd64
     - CGO_ENABLED=1
-    - DOCKER_IMAGE=$DOCKER_REGISTRY/$DOCKER_REPO
+    - DOCKER_IMAGE=quay.io/campact/mailhook
     - BUILD_TAG="${TRAVIS_TAG:-untagged}-$(date +%s)"
   matrix:
     - CC=gcc CXX=gcc
@@ -28,7 +28,7 @@ script:
 before_deploy:
   - REAL_GO_VERSION=$(go version | cut -d' ' -f3)
   - if [[ $DOCKER_ENABLED ]]; then
-      docker login -u $DOCKER_USER -p $DOCKER_PASS $DOCKER_REGISTRY;
+      docker login -u $DOCKER_USER -p $DOCKER_PASS quay.io;
       docker tag $DOCKER_IMAGE ${DOCKER_IMAGE}:${BUILD_TAG}-${REAL_GO_VERSION};
     fi
 

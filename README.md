@@ -70,4 +70,4 @@ multipart/form-data with the following payload:
 
 ---
 
-1.1.2
+1.2.0-rc1

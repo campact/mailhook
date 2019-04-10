@@ -37,6 +37,5 @@ deploy:
     skip_cleanup: true
     script: docker push ${DOCKER_IMAGE}:${BUILD_TAG}-${REAL_GO_VERSION};
     on:
-      branch: feature/dockerize
-      # tags: true
+      tags: true
       condition: $DOCKER_ENABLED

@@ -67,3 +67,7 @@ multipart/form-data with the following payload:
 | ```mail[message][text]``` | Text body of the message |
 | ```mail[message][html]``` | HTML body of the message (can be empty) |
 | ```mail[message][attachments][]``` | Attachments of the message |
+
+---
+
+1.1.2
